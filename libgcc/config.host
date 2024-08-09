@@ -228,6 +228,10 @@ esac
 
 # Common parts for widely ported systems.
 case ${host} in
+*-*-chaos*)
+  extra_parts="$extra_parts crti.o crtbegin.o crtend.o crtn.o"
+  tmake_file="$tmake_file i386/t-crtstuff t-crtstuff-pic t-libgcc-pic"
+  ;;
 *-*-darwin*)
   asm_hidden_op=.private_extern
   tmake_file="$tmake_file t-darwin ${cpu_type}/t-darwin t-libgcc-pic"

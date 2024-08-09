@@ -66,7 +66,13 @@ case "${host}" in
 
     AC_DEFINE(HAVE_USELOCALE)
     ;;
-
+  
+  *-chaos*)
+    GLIBCXX_CHECK_COMPILER_FEATURES
+    GLIBCXX_CHECK_LINKER_FEATURES
+    GLIBCXX_CHECK_MATH_SUPPORT
+    GLIBCXX_CHECK_STDLIB_SUPPORT
+    ;;
   *-darwin*)
     # Darwin versions vary, but the linker should work in a cross environment,
     # so we just check for all the features here.
